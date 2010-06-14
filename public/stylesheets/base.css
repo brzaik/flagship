@@ -18,7 +18,7 @@ html { font-family:"Myriad Web", Myriad, Arial, sans-serif; }
 body { background:#FFFFFF url(../images/customized/woodplanks.jpg) repeat scroll left top; }
 
 /*##########  MAIN HEADERS  ##########*/
-h1.main-title { margin:0px; margin-bottom:30px; padding:0px; font-size:2em; font-weight:600; color:#333; }
+h1.main-title { margin:0px; padding:0px; font-size:2em; font-weight:600; color:#333; }
 h1.main-title span { color:#666; font-weight:normal; font-size:0.45em; padding:0px; margin:0px; margin-top:4px; display:block; }
 h1.main-title span a { color:#666; font-weight:bold; }
 h1.main-title span a.cancel-link { color:#dc0000 !important; }
@@ -68,7 +68,7 @@ div.hr_dl2 { background:url(../images/layout/hr_dl2.png) top left repeat-x; heig
 
 /*##########  WRAP  ##########*/
 #wrap { width:90%; margin:30px auto; margin-bottom:8px; min-width:940px; background:#f5f5f5 url(../images/layout/wrap_bg.png) top left repeat-x; -moz-border-radius:12px; -webkit-border-radius:12px; -moz-border-radius-topleft:0px; -webkit-border-top-left-radius:0px; -moz-border-radius-topright:0px; -webkit-border-top-right-radius:0px; -moz-box-shadow: 0 0 0.5em #000; -webkit-box-shadow: 0 0 0.5em #000; }
-#wrap-padding { padding:40px 20px; padding-bottom:50px; }
+#wrap-padding { padding:0px 0px 30px 0px; padding-bottom:50px; }
 
 /*##########  HEADER  ##########*/
 #header { }
@@ -221,7 +221,7 @@ div#dl-revs div#seemore-link a { color:#666; font-weight:bold; font-size:0.7em; 
 div#dl-revs div#seemore-link a:hover { color:#000; text-decoration: underline; }
 
 /*##########  INFO BOX  ##########*/
-div.info_box { border:solid 1px #666;  -moz-border-radius:7px; -webkit-border-radius:7px; padding:8px; float:right; margin-bottom:20px; margin-left:20px; }
+div.info_box { border:solid 1px #666;  -moz-border-radius:7px; -webkit-border-radius:7px; padding:8px; float:right; margin-left:20px; }
 div.info_box p { font-size:0.5em !important; }
 div.info_box p img { vertical-align: middle; }
 
@@ -296,3 +296,9 @@ table.docs tr td:last-child { border-right:solid 1px #999; }
 table.docs tr:last-child td { border-bottom:solid 1px #999; }
 table.docs tr:last-child td:first-child { -moz-border-radius-bottomleft:10px; -webkit-border-bottom-left-radius:10px; border-bottom-left-radius:10px; border:solid 1px #999; border-width: 1px 0px 1px 1px; }
 table.docs tr:last-child td:last-child { -moz-border-radius-bottomright:10px; -webkit-border-bottom-right-radius:10px; border-bottom-right-radius:10px; border:solid 1px #999; border-width: 1px 1px 1px 0px; }
+
+
+/* NEW STUFF */
+table.splitcol { border:0px; padding:0px; margin:0px; }
+table.splitcol td { vertical-align:top; background:transparent url(../images/layout/hr_dl.png) top left repeat-x; padding-top:2px; }
+table.splitcol td.rightcol { width:30%; background:#dddddd url(../images/layout/dlbg.png) top right repeat-x; }
