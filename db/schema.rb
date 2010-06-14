@@ -9,7 +9,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227203223) do
+ActiveRecord::Schema.define(:version => 20100614021006) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.integer  "viewed",      :default => 0
+    t.boolean  "readable",    :default => true
+    t.boolean  "writable",    :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "backgrounds", :force => true do |t|
     t.string   "image_file_name"
@@ -90,6 +102,15 @@ ActiveRecord::Schema.define(:version => 20100227203223) do
   add_index "revisions", ["document_id"], :name => "document_id_index"
   add_index "revisions", ["position"], :name => "position_index"
   add_index "revisions", ["user_id"], :name => "user_id_index"
+
+  create_table "textblocks", :force => true do |t|
+    t.string   "title"
+    t.integer  "article_id"
+    t.text     "content"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"

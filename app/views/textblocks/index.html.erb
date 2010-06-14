@@ -1,0 +1,26 @@
+<h1>Listing textblocks</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Article</th>
+    <th>Content</th>
+    <th>Cardinality</th>
+  </tr>
+
+<% @textblocks.each do |textblock| %>
+  <tr>
+    <td><%=h textblock.title %></td>
+    <td><%=h textblock.article_id %></td>
+    <td><%=h textblock.content %></td>
+    <td><%=h textblock.cardinality %></td>
+    <td><%= link_to 'Show', textblock %></td>
+    <td><%= link_to 'Edit', edit_textblock_path(textblock) %></td>
+    <td><%= link_to 'Destroy', textblock, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New textblock', new_textblock_path %>

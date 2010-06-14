@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @textblock.title %>
+</p>
+
+<p>
+  <b>Article:</b>
+  <%=h @textblock.article_id %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @textblock.content %>
+</p>
+
+<p>
+  <b>Cardinality:</b>
+  <%=h @textblock.cardinality %>
+</p>
+
+
+<%= link_to 'Edit', edit_textblock_path(@textblock) %> |
+<%= link_to 'Back', textblocks_path %>

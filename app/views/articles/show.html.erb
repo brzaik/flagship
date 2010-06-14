@@ -1,0 +1,38 @@
+<p>
+  <b>Title:</b>
+  <%=h @article.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @article.description %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @article.category_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @article.user_id %>
+</p>
+
+<p>
+  <b>Viewed:</b>
+  <%=h @article.viewed %>
+</p>
+
+<p>
+  <b>Readable:</b>
+  <%=h @article.readable %>
+</p>
+
+<p>
+  <b>Writable:</b>
+  <%=h @article.writable %>
+</p>
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
