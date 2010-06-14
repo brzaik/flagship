@@ -46,6 +46,7 @@
 						<% cache('search_pane') do %>
 							<%= render :partial => "documents/search_pane" %>
 						<% end %>
+						<a id="cat_tree_expand" style="display:none;" href="#"><span id="label_hide" style="display:none;">Hide</span><span id="label_show">Show</span></a>
 					</div>
 					<div id="topbar-right">
 						<h1>
@@ -68,7 +69,7 @@
 				</div>
 			</div>
 
-			<h1 class="expand"><a id="cat_tree_expand" style="display:none;" href="#"><span id="label_hide" style="display:none;">Hide</span><span id="label_show">Show</span> Categories</a></h1>
+
 			<% if !logged_in? %>
 				<% cache('cat_tree_0', :expires_in => 1.hour) do %>
 					<%= render :partial=>'categories/cat_tree' %>
