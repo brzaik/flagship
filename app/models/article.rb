@@ -11,4 +11,13 @@ class Article < ActiveRecord::Base
   #Indexing
   acts_as_ferret :fields => { :title  => {:store => :yes}, :description => {:store => :yes}}  
   
+  #The group that is responsible for this document.  Inherited from the category the document belongs to.
+  def group
+    if !self.category.nil?
+      self.category.group
+    else
+      nil
+    end
+  end
+  
 end

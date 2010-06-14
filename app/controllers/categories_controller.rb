@@ -16,6 +16,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @doc_display = params[:type] || 'table'
     @docs= @category.documents
+    @articles = @category.articles
     @docs.delete_if {|x| !x.allowed_to_read} #Hide private documents
     if @category.allowed_to_read #Show only if the user is allowed to see it
        if request.xhr?

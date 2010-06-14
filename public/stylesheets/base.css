@@ -18,12 +18,12 @@ html { font-family:"Myriad Web", Myriad, Arial, sans-serif; }
 body { background:#FFFFFF url(../images/customized/woodplanks.jpg) repeat scroll left top; }
 
 /*##########  MAIN HEADERS  ##########*/
-h1.main-title { margin:0px; margin-bottom:30px; padding:0px; padding-left:34px; background:url(../images/layout/h1block.png) top left no-repeat; font-size:2.2em; font-weight:600; color:#333; }
+h1.main-title { margin:0px; margin-bottom:30px; padding:0px; font-size:2em; font-weight:600; color:#333; }
 h1.main-title span { color:#666; font-weight:normal; font-size:0.45em; padding:0px; margin:0px; margin-top:4px; display:block; }
 h1.main-title span a { color:#666; font-weight:bold; }
 h1.main-title span a.cancel-link { color:#dc0000 !important; }
 h1.main-title span a.edit-link { color:#f59300 !important; }
-h2.breadcrumb { margin-bottom:6px; padding-left:34px; color:#999; text-transform: uppercase; font-size:0.7em; letter-spacing: 0.15em; }
+h2.breadcrumb { margin-bottom:6px; color:#999; text-transform: uppercase; font-size:0.7em; letter-spacing: 0.15em; }
 h2.breadcrumb a { padding:4px; color:#333; }
 h2.breadcrumb a:hover { background:#000; color:#FFF; }
 div.mc-indent h1 { font-size:1.6em; color:#000; font-weight:normal; margin:35px 0px 6px 0px; padding:0px; }
@@ -31,7 +31,7 @@ div.mc-indent h2 { font-size:1.2em; color:#333; font-weight:normal; margin:0px 0
 div.mc-indent p { font-size:0.8em; color:#333; line-height:1.2em; margin:0px 0px 12px 0px; padding:0px; }
 
 /*##########  INDENTS AND PADDING  ##########*/
-div.mc-indent { padding-left:34px; }
+div.mc-indent { }
 div.flush { margin-left:-20px; margin-right:-20px; }
 
 /*##########  LINKS AND LINK BUTTONS  ##########*/

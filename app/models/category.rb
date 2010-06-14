@@ -8,6 +8,7 @@ class Category < ActiveRecord::Base
   belongs_to :group
   belongs_to :user
   has_many :documents, :dependent => :nullify
+  has_many :articles
   belongs_to :background
 
   accepts_nested_attributes_for :background, :allow_destroy => true, :reject_if => proc { |attrs| attrs['image'].blank? }

@@ -1,38 +1,42 @@
-<p>
-  <b>Title:</b>
-  <%=h @article.title %>
-</p>
+<% content_for :title, @article.title %>
+<% content_for :meta_tags, meta_tags(@article.title, @article.description) %>
+<% my_ancestors = @article.category.ancestors unless @article.category.nil? %>
 
-<p>
-  <b>Description:</b>
-  <%=h @article.description %>
-</p>
+<h2 class="breadcrumb">
+	<% if !@article.category.nil? %>
+		<%= link_to "Home", root_path %>&nbsp;/&nbsp;<% my_ancestors.reverse.each do |ancestor_category| %><%= link_to ancestor_category.name, ancestor_category %>&nbsp;/&nbsp;<% end %><%= link_to @article.category.name, @article.category %>
+	<% end %>
+</h2>
 
-<p>
-  <b>Category:</b>
-  <%=h @article.category_id %>
-</p>
+<h1 class="main-title">
+	<div class="info_box">
+		<p>
+			<% if @article.readable %>
+				<%= image_tag("icons/eye_icon.png", :alt => "Public", :title => "This article is visible to everyone") %>
+			<% else %>
+				<%= image_tag("icons/noeye_icon.png", :alt => "Private", :title => "This article is invisible to others") %>
+			<% end %>
+			<% if @article.writable %>
+				<%= image_tag("icons/write_icon.png", :alt => "Editable", :title => "Others can edit this article") %>
+			<% else %>
+				<%= image_tag("icons/nowrite_icon.png", :alt => "Not Editable", :title => "Only members of #{@article.group.name unless @article.group.nil?} can edit this article") %>
+			<% end %>
+			&nbsp;&nbsp;&nbsp;<%=h @article.viewed %> views
+		</p>
+	</div>
 
-<p>
-  <b>User:</b>
-  <%=h @article.user_id %>
-</p>
-
-<p>
-  <b>Viewed:</b>
-  <%=h @article.viewed %>
-</p>
-
-<p>
-  <b>Readable:</b>
-  <%=h @article.readable %>
-</p>
-
-<p>
-  <b>Writable:</b>
-  <%=h @article.writable %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+	<%=h @article.title %>
+	<% if logged_in? && (admin_logged_in? || @article.allowed_to_save) %>
+	  <span>
+	  	<%= link_to 'Edit', edit_article_path(@article), :class => 'edit-link' %>
+	  	&nbsp;
+	  	<%= link_to 'Remove', article_path(@article), :confirm => 'Are you sure you want to remove this article?', :method => :delete, :class => 'cancel-link' %>
+	  </span>
+	<% end %>
+</h1>
+<div id="mc-indent" class="mc-indent">
+	<% if @article.description and @article.description != "" %>
+		<%= @article.description %>
+		<br /><br />
+	<% end %>
+</div>
